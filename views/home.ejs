@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+
+
+<% postarr.forEach(function(l){%>
+  <h1><%= l.title %></h1>
+  <%if(l.title==="HOME"){%>
+    <p><%=l.content%></p>
+  <%}else{%>
+    <p><%= l.content.slice(0,150)+"..." %>
+    <a href="/posts/<%=l.title%>">Read More</a>
+    </p>
+  <%}%>
+<%});%>
+
+
+
+<%- include("partials/footer") -%>
